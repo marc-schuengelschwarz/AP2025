@@ -3,137 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paula's Garden</title>
-  <link rel="stylesheet" href="/css/output.css" />
+  <title>Testseite mit CSS Nesting</title>
+  <style>
+    /* Beispiel für CSS Nesting */
+    .image-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        background-color: #000000;
+      }
+    }
+  </style>
 </head>
-<body class="flex justify-center bg-pg-black font-barlow text-black text-body w-full h-full max-w-[1366px] max-h-[1024px] m-auto ">
-
-  <section id="home" class="w-full bg-pg-white">
-    <header class="h-[140px]">
-      <img src="./assets/Brand/Logo_262x182px.svg" alt="Logo" class="ml-[100px] mt-[36px] w-[150px] h-[104px]"/>
-    </header>
-    
-    <!-- Menü Kacheln-->
-    <div class="px-80 pb-80 grid grid-rows-2 grid-cols-3 gap-80 justify-center items-center ">
-      <section class="menu-kachel" role="button" tabindex="0" data-overlay="overlay1" onclick="openOverlay(this)">
-        <img src="./assets/img/Home_1.webp" class="menu-image" alt="Blumenbeete mit Hängetöpfen"/>
-        <h2 aria-label="Paula's Garden-Lovestory">Paula's Garden-Lovestory</h2>
-      </section>
-      <section class="menu-kachel" role="button" tabindex="0" data-overlay="overlay2" onclick="openOverlay(this)">
-        <img src="./assets/img/Home_2.webp"/>
-        <h2 alt="Rosa Blüten im Sonnenlicht" aria-label="Blühende Angebote">Blühende Angebote</h2>
-      </section>
-      <section class="menu-kachel" role="button" tabindex="0" data-overlay="overlay3" onclick="openOverlay(this)">
-        <img src="/assets/img/Home_3.webp" class="menu-image"/>
-        <h2 alt="Orangefarbene Chrysanthemen" aria-label="Freude schenken">Freude schenken</h2>
-      </section>
-      <section class="menu-kachel" role="button" tabindex="0" data-overlay="overlay4" onclick="openOverlay(this)">
-        <img src="./assets/img/Home_4.webp" class="menu-image"/>
-        <h2 alt="Workshop mit Blumen und Werkzeug" aria-label="Grüne Events">Grüne Events</h2>
-      </section>
-      <section class="menu-kachel" role="button" tabindex="0" data-overlay="overlay5" onclick="openOverlay(this)">
-        <img src="assets/img/Home_5.webp" class="menu-image"/>
-        <h2 alt="Wacholderbeeren am Strauch" aria-label="Blüten News">Blüten News</h2>
-      </section>
-      <section class="menu-kachel" role="button" tabindex="0">
-        <img src="assets/img/Home_6.webp" class="menu-image"/>
-        <h2 alt="Gartencenter mit bunten Blumen" aria-label="Paula's Garden entdecken">Paula's Garden entdecken</h2>
-      </section>
-    </div>
-  </section>
-
-  <!-- Overlays -->
-  <div id="overlay-container" class="fixed inset-0 z-50 hidden">
-    <div id="overlay-bg" class="absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-850" onclick="closeAllOverlays()"></div>
-    
-    <section id="overlay1" class="absolute bottom-0 right-0 rounded-2xl w-overlay-w h-overlay-h overflow-hidden bg-white transform translate-x-full transition-transform duration-850 shadow-2xl">
-      <div class="h-full w-full flex flex-row">
-        <div class="absolute top-[575px] left-[-307px] w-[1465px] h-[891px] rotate-[-11.28deg] z-0" style="background-image: url('/assets/Brand/Pattern_1805x1101px.svg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
-        </div>
-        <div class="bg-pg-green text-pg-white p-[120px] shadow-md flex flex-col w-[712px] font-semibold">
-          <h2 class="text-h2 pb-6">Eine Worpsweder Lovestory</h2>
-          <p class="text-schmuck-sub italic pb-16">Seit vier Generationen blühen und gedeihen in Worpswede Schnittblumen, Topfpflanzen und Sträucher und warten auf ihre Käufer.</p>
-          <p class="pb-10 font-normal">In guter familiärer Tradition und mit der ihr eigenen Begeisterung für alles Grüne und Neue hat Paula Gerken das Geschäft nun umbenannt in Paula’s Garden. Gar nicht zufällig erinnert ihr Vorname an die größte Künstlerin Worpswedes, die Malerin Paula Modersohn-Becker.</p>
-          <p class="font-normal">In Paula’s Garden finden Pflanzenliebhaber jetzt nicht nur kunstvolle Blüten-Arrangements für jedes Fest, sondern auch außergewöhnliche Geschenkideen. Und natürlich kann sich jede Hobbygärtnerin und jeder Freizeitgärtner mit allem nötigen Zubehör versorgen, von Schaufel und Erde bis zu Gartenhandschuh und Düngemittel.</p>
-        </div>
-        <div class="w-[487px] relative">
-          <img src="/assets/img/story_1.webp" alt="Hängetöpfe im Gewächshaus" class="h-full object-cover shadow-md" />
-        </div>
-      </div>
-    </section>
-    
-    <section id="overlay2">
-      <div>
-          <header>
-            <h2 class="text-h2 pb-6">Wachse über dich hinaus!</h2>
-            <p class="font-semibold"> Hier findest du die saisonal wechselnden Angebote von Paula's Garden</p>
-          </header>
-          <p class="absolute font-normal">Bereit für die kalte Jahreszeit? Mit unseren Angeboten kommst du farbenfroh durch Herbst und Winter!</p>
-          <div class="h-[655px] w-full px-[120px] gap-10 flex flex-row">
-            <article class="bg-[url('/assets/img/angebote_1.webp')]">
-              <header>
-                <h3>Herbstliche Pflanzen</h3>
-                <p>Entdecke unsere Auswahl an herbstlichen Pflanzen, die deinem Garten Farbe verleihen.</p>
-              </header>
-            </article>
-          </div>
-      </div>
-   </section>
-    
-   <section id="overlay3" class="absolute top-0 right-0 w-full md:w-[900px] h-full bg-white transform translate-x-full transition-transform duration-500 shadow-2xl">
-      <div class="p-10 h-full flex flex-col md:flex-row gap-8">
-        <div class="bg-pg-green text-pg-white p-8 rounded-xl shadow-md w-full md:w-1/2 flex flex-col justify-center">
-          <h2 class="text-3xl font-semibold mb-4">Gartenbedarf</h2>
-          <p class="mb-4">Hier finden Sie alles, was Sie für Ihren Garten benötigen: von Erde über Dünger bis hin zu Werkzeugen.</p>
-        </div>
-      </div>
-   </section>
-    
-   <section id="overlay4" class="absolute top-0 right-0 w-full md:w-[900px] h-full bg-white transform translate-x-full transition-transform duration-500 shadow-2xl">
-      <div class="p-10 h-full flex flex-col md:flex-row gap-8">
-        <div class="bg-pg-green text-pg-white p-8 rounded-xl shadow-md w-full md:w-1/2 flex flex-col justify-center">
-          <h2 class="text-3xl font-semibold mb-4">Gartenbedarf</h2>
-          <p class="mb-4">Hier finden Sie alles, was Sie für Ihren Garten benötigen: von Erde über Dünger bis hin zu Werkzeugen.</p>
-        </div>
-      </div>
-   </section>
-    
-   <section id="overlay5" class="absolute top-0 right-0 w-full md:w-[900px] h-full bg-white transform translate-x-full transition-transform duration-500 shadow-2xl">
-      <div class="p-10 h-full flex flex-col md:flex-row gap-8">
-        <div class="bg-pg-green text-pg-white p-8 rounded-xl shadow-md w-full md:w-1/2 flex flex-col justify-center">
-          <h2 class="text-3xl font-semibold mb-4">Gartenbedarf</h2>
-          <p class="mb-4">Hier finden Sie alles, was Sie für Ihren Garten benötigen: von Erde über Dünger bis hin zu Werkzeugen.</p>
-        </div>
-      </div>
-   </section>
+<body>
+  <div class="image-wrapper">
+    <img src="./assets/img/Home_2.webp" alt="Testbild" />
   </div>
-  <script> 
-    // Open the overlay when clicking on a section
-    function openOverlay(section) {
-      // Alle Overlays schließen (falls noch eins offen ist)
-      document.querySelectorAll('section[id^="overlay"]').forEach(o => o.classList.add('translate-x-full'));
-
-      // Overlay-Container einblenden
-      document.getElementById('overlay-container')?.classList.remove('hidden');
-      setTimeout(() => {
-        document.getElementById('overlay-bg')?.classList.remove('opacity-0');
-        // Nur das passende Overlay einblenden
-        const overlayId = section.getAttribute('data-overlay');
-        document.getElementById(overlayId)?.classList.remove('translate-x-full');
-      }, 10);
-    }
-
-  //Close all overlays when clicking outside
-    function closeAllOverlays() {
-      document.getElementById('overlay-bg')?.classList.add('opacity-0');
-      document.querySelectorAll('section[id^="overlay"]').forEach(o => o.classList.add('translate-x-full'));
-      setTimeout(() => {
-        document.getElementById('overlay-container')?.classList.add('hidden');
-      }, 500);
-    }
-</script>
-  <script>
-    document.addEventListener('DOMContentLoaded', renderComponents);
-  </script>
 </body>
 </html>
